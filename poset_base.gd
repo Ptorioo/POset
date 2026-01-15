@@ -1,5 +1,5 @@
 class_name PosetIsomorphism
-extends Reference
+extends RefCounted
 
 const K_INC = 0  # incomparable 
 const K_GEQ = 1   # >=
@@ -268,3 +268,64 @@ static func _derive_covers_from_order(n, arr):
 				if is_cover:
 					arr[i][j][K_COV] = true
 					arr[j][i][K_COVBY] = true
+
+# -------------------------------------------------------------------------
+# ANALYSIS TOOLS (need 1st read)
+# -------------------------------------------------------------------------
+
+# Returns a Dictionary where keys are vertex indices (0 to n-1)
+# Value is { "covers": [list of children], "covered_by": [list of parents] }
+static func get_adjacency_data(n, arr):
+	var data = {}
+	for i in range(n):
+		data[i] = { "covers": [], "covered_by": [] }
+		for j in range(n):
+			# If i covers j (i > j directly)
+			if arr[i][j][K_COV]:
+				data[i]["covers"].append(j)
+			# If i is covered by j (i < j directly)
+			if arr[i][j][K_COVBY]:
+				data[i]["covered_by"].append(j)
+	return data
+
+# Calculates the height/rank of every vertex.
+# Rank 0 = Minimal elements (Leaves, those who don't cover anything)
+# Rank k = Longest path to a minimal element is length k
+static func get_ranks(n, arr):
+	var ranks = [] 
+	var children_remaining = [] # Dependency counter
+	var queue = []
+	
+	# 1. Initialize: Find leaves and count how many children each node has
+	for i in range(n):
+		ranks.append(0) # Default rank
+		var count = 0
+		for j in range(n):
+			if arr[i][j][K_COV]: # i covers j
+				count += 1
+		children_remaining.append(count)
+		
+		# If i covers nothing, it's a leaf (minimal element) -> Add to queue
+		if count == 0:
+			queue.append(i)
+	
+	# 2. Process Queue (Reverse Topological Sort)
+	var head = 0
+	while head < queue.size():
+		var u = queue[head]
+		head += 1
+		
+		# Find 'v' such that 'v' covers 'u' (v is a parent of u)
+		for v in range(n):
+			if arr[v][u][K_COV]:
+				# Update Rank: v is at least u's rank + 1
+				if ranks[u] + 1 > ranks[v]:
+					ranks[v] = ranks[u] + 1
+				
+				# Decrease dependency count for v
+				# We only process v when we have processed ALL its children
+				children_remaining[v] -= 1
+				if children_remaining[v] == 0:
+					queue.append(v)
+					
+	return ranks

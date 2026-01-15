@@ -10,11 +10,21 @@ config_version=5
 
 [application]
 
-config/name="POset"
-run/main_scene="uid://wrsa2ob1xg15"
-config/features=PackedStringArray("4.5", "Forward Plus")
-config/icon="res://icon.svg"
+config/name="poset"
+run/main_scene="res://poset_base.tscn"
+config/features=PackedStringArray("4.5")
+config/icon="res://icon.png"
 
-[dotnet]
+[gui]
 
-project/assembly_name="POset"
+common/drop_mouse_on_gui_input_disabled=true
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+environment/defaults/default_environment="res://default_env.tres"
+quality/driver/driver_name="GLES2"
+vram_compression/import_etc=true

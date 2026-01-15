@@ -23,3 +23,25 @@ func _ready():
 	
 	var result = PosetIsomorphism.are_isomorphic(n, P_A, P_B)
 	print("FINAL RESULT: ", result) # Should be TRUE
+	
+	n = 5
+
+	var P = PosetIsomorphism.create(n)
+	
+	PosetIsomorphism.try_add_covering(n, P, 1, 0)
+	PosetIsomorphism.try_add_covering(n, P, 2, 0)
+	PosetIsomorphism.try_add_covering(n, P, 3, 1)
+	PosetIsomorphism.try_add_covering(n, P, 4, 3)
+	PosetIsomorphism.try_add_covering(n, P, 4, 2)
+
+	# 1. Get Adjacency
+	var adj = PosetIsomorphism.get_adjacency_data(n, P)
+	print("--- Adjacency Data ---")
+	print("Node 4 covers: ", adj[4]["covers"])
+	print("Node 4 covered by: ", adj[4]["covered_by"])
+
+	# 2. Get Ranks
+	var ranks = PosetIsomorphism.get_ranks(n, P)
+	print("\n--- Ranks ---")
+	for i in range(5):
+		print("Node " + str(i) + " Rank: ", ranks[i]) # Should be 0 (Leaf)
