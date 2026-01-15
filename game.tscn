@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bil1slj6bfhxt" path="res://sprite_2d.gd" id="1_80nbo"]
 [ext_resource type="Texture2D" uid="uid://bx2hyb8yhe6xk" path="res://icon.svg" id="1_e2o6t"]
-[ext_resource type="Texture2D" uid="uid://2y1x6u0xojg8" path="res://Isometric_Tiles_Pixel_Art_v01_2_DevilsworkShop/Isometric_Tiles_Pixel_Art/Blocks/blocks_1.png" id="1_feb5d"]
+[ext_resource type="Texture2D" uid="uid://gxf5hbmuifyp" path="res://blocks_1.png" id="1_feb5d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_feb5d"]
 texture = ExtResource("1_feb5d")
