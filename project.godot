@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="poset"
-run/main_scene="res://poset_base.tscn"
+run/main_scene="uid://b2tqfglrp0yqe"
 config/features=PackedStringArray("4.5")
 config/icon="res://icon.png"
+
+[filesystem]
+
+import/blender/enabled=false
 
 [gui]
 

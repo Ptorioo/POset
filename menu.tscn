@@ -1,0 +1,139 @@
+[gd_scene load_steps=6 format=3 uid="uid://b2tqfglrp0yqe"]
+
+[ext_resource type="Script" uid="uid://ccyonkkpqgl7a" path="res://menu.gd" id="1_lti8b"]
+[ext_resource type="Texture2D" uid="uid://cit5qre7v7weg" path="res://Tiles107_1K-PNG/Tiles107_1K-PNG_Color.png" id="2_ouk20"]
+[ext_resource type="FontFile" uid="uid://dnvrn8d45abfc" path="res://font/Noto_Serif/NotoSerif-VariableFont_wdth,wght.ttf" id="3_mae5d"]
+[ext_resource type="FontFile" uid="uid://cuwngypskii7y" path="res://font/Noto_Serif/NotoSerif-Italic-VariableFont_wdth,wght.ttf" id="3_ytr4m"]
+[ext_resource type="Texture2D" uid="uid://ddfhmfms8mbnd" path="res://Tiles107_1K-PNG/white.png" id="4_4hy44"]
+
+[node name="menu" type="Node2D"]
+script = ExtResource("1_lti8b")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -312.0
+offset_top = 24.0
+offset_right = 6188.79
+offset_bottom = 4087.8892
+rotation = -0.27576202
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_ouk20")
+stretch_mode = 1
+
+[node name="background1" type="RichTextLabel" parent="."]
+offset_left = 161.0
+offset_top = 323.0
+offset_right = 192.0
+offset_bottom = 368.0
+theme_override_colors/default_color = Color(0.78, 0.78, 0.78, 1)
+theme_override_fonts/normal_font = ExtResource("3_ytr4m")
+theme_override_font_sizes/normal_font_size = 30
+text = "P"
+
+[node name="background2" type="RichTextLabel" parent="."]
+offset_left = 912.0
+offset_top = 162.0
+offset_right = 943.0
+offset_bottom = 207.0
+theme_override_colors/default_color = Color(0.78, 0.78, 0.78, 1)
+theme_override_fonts/normal_font = ExtResource("3_ytr4m")
+theme_override_font_sizes/normal_font_size = 30
+text = "φ"
+
+[node name="background3" type="RichTextLabel" parent="."]
+offset_left = 412.0
+offset_top = 93.0
+offset_right = 524.0
+offset_bottom = 138.0
+theme_override_colors/default_color = Color(0.78, 0.78, 0.78, 1)
+theme_override_fonts/normal_font = ExtResource("3_ytr4m")
+theme_override_font_sizes/normal_font_size = 30
+text = "a≺b⋖c"
+
+[node name="background4" type="RichTextLabel" parent="."]
+offset_left = 820.0
+offset_top = 389.0
+offset_right = 860.0
+offset_bottom = 434.0
+theme_override_colors/default_color = Color(0.78, 0.78, 0.78, 1)
+theme_override_fonts/normal_font = ExtResource("3_ytr4m")
+theme_override_font_sizes/normal_font_size = 30
+text = "μ"
+
+[node name="title" type="RichTextLabel" parent="."]
+offset_left = 267.0
+offset_top = 113.0
+offset_right = 914.0
+offset_bottom = 203.0
+theme_override_colors/default_color = Color(0.00043358814, 0.00035818588, 0.00019598225, 1)
+theme_override_fonts/normal_font = ExtResource("3_mae5d")
+theme_override_font_sizes/normal_font_size = 70
+text = "POSET BEACON"
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="start" type="TextureButton" parent="."]
+clip_contents = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 505.0
+offset_top = 293.0
+offset_right = 649.0
+offset_bottom = 361.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("4_4hy44")
+ignore_texture_size = true
+stretch_mode = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="start"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.503
+anchor_right = 0.503
+offset_left = -66.43201
+offset_top = -7.0
+offset_right = 66.56799
+offset_bottom = 64.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_mae5d")
+theme_override_font_sizes/normal_font_size = 45
+text = "Start"
+horizontal_alignment = 1
+
+[node name="credit" type="TextureButton" parent="."]
+clip_contents = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 505.0
+offset_top = 399.0
+offset_right = 649.0
+offset_bottom = 467.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("4_4hy44")
+ignore_texture_size = true
+stretch_mode = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="credit"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.503
+anchor_right = 0.503
+offset_left = -81.43201
+offset_top = -2.0
+offset_right = 77.56799
+offset_bottom = 69.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_mae5d")
+theme_override_font_sizes/normal_font_size = 45
+text = "Credit"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="start" to="." method="_on_start_pressed"]

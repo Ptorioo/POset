@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=4 uid="uid://wrsa2ob1xg15"]
+[gd_scene load_steps=7 format=4 uid="uid://wrsa2ob1xg15"]
 
 [ext_resource type="Script" uid="uid://bil1slj6bfhxt" path="res://sprite_2d.gd" id="1_80nbo"]
 [ext_resource type="Texture2D" uid="uid://cyawfv138173d" path="res://icon.svg" id="1_e2o6t"]
+[ext_resource type="Script" uid="uid://cr2alnrrlpjti" path="res://game.gd" id="1_fc0e3"]
 [ext_resource type="Texture2D" uid="uid://bkipi2srokfu1" path="res://blocks_1.png" id="1_feb5d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_feb5d"]
@@ -15,6 +16,7 @@ tile_size = Vector2i(64, 64)
 sources/0 = SubResource("TileSetAtlasSource_feb5d")
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_fc0e3")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 y_sort_enabled = true
