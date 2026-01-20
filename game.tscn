@@ -2,13 +2,9 @@
 
 [ext_resource type="Script" uid="uid://bil1slj6bfhxt" path="res://sprite_2d.gd" id="1_80nbo"]
 [ext_resource type="Texture2D" uid="uid://cyawfv138173d" path="res://icon.svg" id="1_e2o6t"]
-<<<<<<< Updated upstream
 [ext_resource type="Script" uid="uid://cr2alnrrlpjti" path="res://game.gd" id="1_fc0e3"]
 [ext_resource type="Texture2D" uid="uid://bkipi2srokfu1" path="res://blocks_1.png" id="1_feb5d"]
-=======
 [ext_resource type="Texture2D" uid="uid://3hqsi3k7dsbp" path="res://icons_26985.svg" id="1_feb5d"]
->>>>>>> Stashed changes
-
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_feb5d"]
 texture = ExtResource("1_feb5d")
 texture_region_size = Vector2i(128, 128)

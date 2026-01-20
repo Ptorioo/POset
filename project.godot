@@ -15,13 +15,13 @@ run/main_scene="uid://b2tqfglrp0yqe"
 config/features=PackedStringArray("4.5")
 config/icon="res://icon.png"
 
-[filesystem]
-
-import/blender/enabled=false
-
 [dotnet]
 
 project/assembly_name="poset"
+
+[filesystem]
+
+import/blender/enabled=false
 
 [gui]
 
