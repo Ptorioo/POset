@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=3 uid="uid://cxx1kfcl3muv7"]
+
+[ext_resource type="Texture2D" uid="uid://ddfhmfms8mbnd" path="res://Tiles107_1K-PNG/white.png" id="1_4eycx"]
+[ext_resource type="FontFile" uid="uid://dnvrn8d45abfc" path="res://font/Noto_Serif/NotoSerif-VariableFont_wdth,wght.ttf" id="2_ffqll"]
+[ext_resource type="Script" uid="uid://curv8edggokrw" path="res://LevelButton.gd" id="2_o0vj1"]
+
+[node name="Control" type="Control"]
+custom_minimum_size = Vector2(345, 100)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 500.0
+offset_bottom = 100.0
+script = ExtResource("2_o0vj1")
+
+[node name="start" type="TextureButton" parent="."]
+clip_contents = true
+custom_minimum_size = Vector2(160, 70)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -35.0
+offset_right = 80.0
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("1_4eycx")
+stretch_mode = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="start"]
+z_index = 1
+clip_contents = false
+custom_minimum_size = Vector2(100, 70)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -3.3580003
+anchor_top = -5.359
+anchor_right = -3.3580003
+anchor_bottom = -5.359
+offset_left = 550.28
+offset_top = 376.13
+offset_right = 683.28
+offset_bottom = 448.13
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_ffqll")
+theme_override_font_sizes/normal_font_size = 45
+text = "Lv. 1"
+fit_content = true
+horizontal_alignment = 1

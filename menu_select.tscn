@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://denjovfba0yr6"]
+
+[ext_resource type="Script" uid="uid://d4dmeq0n03p6u" path="res://menu_select.gd" id="1_2q5kl"]
+[ext_resource type="Texture2D" uid="uid://cit5qre7v7weg" path="res://Tiles107_1K-PNG/Tiles107_1K-PNG_Color.png" id="2_146ll"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_2q5kl")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer"]
+offset_left = -312.0
+offset_top = 24.0
+offset_right = 6188.79
+offset_bottom = 4087.8892
+rotation = -0.27576202
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_146ll")
+stretch_mode = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer"]
+offset_right = 1150.0
+offset_bottom = 650.0
+size_flags_horizontal = 6
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/ScrollContainer"]
+custom_minimum_size = Vector2(1150, 650)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+columns = 3
