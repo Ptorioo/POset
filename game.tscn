@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=4 uid="uid://wrsa2ob1xg15"]
 
 [ext_resource type="Script" uid="uid://bil1slj6bfhxt" path="res://sprite_2d.gd" id="1_80nbo"]
-[ext_resource type="Texture2D" uid="uid://cyawfv138173d" path="res://icon.svg" id="1_e2o6t"]
 [ext_resource type="Script" uid="uid://cr2alnrrlpjti" path="res://game.gd" id="1_fc0e3"]
-[ext_resource type="Texture2D" uid="uid://bkipi2srokfu1" path="res://blocks_1.png" id="1_feb5d"]
 [ext_resource type="Texture2D" uid="uid://3hqsi3k7dsbp" path="res://icons_26985.svg" id="1_feb5d"]
+[ext_resource type="Texture2D" uid="uid://chpr0h405cx2n" path="res://flag-128.png" id="3_fc0e3"]
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_feb5d"]
 texture = ExtResource("1_feb5d")
 texture_region_size = Vector2i(128, 128)
@@ -64,8 +64,8 @@ tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAA
 tile_set = SubResource("TileSet_fc0e3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
 scale = Vector2(0.296875, 0.296875)
-texture = ExtResource("1_e2o6t")
+texture = ExtResource("3_fc0e3")
 script = ExtResource("1_80nbo")
 tilemap_path = NodePath("../TileMapLayer")
+element_scale = Vector2(0.3, 0.3)
